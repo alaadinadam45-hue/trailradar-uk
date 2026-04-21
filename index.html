@@ -1,121 +1,73 @@
- <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrialRadar UK | The Official Football Trial Registry</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Trial Radar UK | رادار تجارب كرة القدم</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #050505; color: white; }
-        .accent-text { color: #ccff00; }
-        .accent-bg { background-color: #ccff00; }
-        .tier-card { background: #0a0a0a; border: 1px solid #1a1a1a; transition: 0.3s; }
-        .tier-card:hover { border-color: #ccff00; transform: translateY(-5px); }
+        /* ستايل سريع للتأكد من ظهور الجدول بشكل جميل */
+        body { font-family: sans-serif; background-color: #f4f4f4; text-align: center; padding: 20px; }
+        .table-container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 900px; margin: auto; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 12px; border-bottom: 1px solid #ddd; text-align: right; }
+        th { background-color: #2c3e50; color: white; }
+        .status-badge { background: #27ae60; color: white; padding: 5px 10px; border-radius: 5px; font-size: 12px; }
+        .apply-btn { background: #2980b9; color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; display: inline-block; }
+        .apply-btn:hover { background: #3498db; }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <nav class="flex justify-between items-center p-6 bg-black border-b border-gray-900 sticky top-0 z-50">
-        <div class="text-2xl font-black italic tracking-tighter uppercase">TRIAL<span class="accent-text">RADAR</span> <span class="text-xs not-italic font-bold bg-white text-black px-2 ml-1">UK</span></div>
-        <div class="hidden lg:flex space-x-8 text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">
-            <a href="#" class="hover:text-white">Pyramid Steps</a>
-            <a href="#" class="hover:text-white">Premier League</a>
-            <a href="#" class="hover:text-white">Non-League</a>
-            <a href="#" class="hover:accent-text text-red-500">Live Updates</a>
-        </div>
-        <button class="accent-bg text-black px-6 py-2 rounded-full font-black text-[10px] uppercase">Post a Trial</button>
-    </nav>
+    <h1>🚀 Trial Radar UK</h1>
+    <p>آخر تجارب الأداء المكتشفة في بريطانيا</p>
 
-    <div class="flex flex-col lg:flex-row">
-        
-        <aside class="w-full lg:w-80 p-8 border-r border-gray-900 bg-black lg:h-screen lg:sticky lg:top-20 overflow-y-auto">
-            <h3 class="text-[11px] font-black uppercase mb-8 text-gray-500 tracking-[0.2em] border-b border-gray-800 pb-2">UK Football Pyramid</h3>
-            
-            <div class="space-y-8">
-                <div>
-                    <p class="accent-text text-xs font-bold mb-4 uppercase italic">Pro Tiers (Step 1-4)</p>
-                    <div class="space-y-3 text-sm text-gray-400 font-medium">
-                        <label class="flex items-center gap-3 cursor-pointer"><input type="checkbox" class="accent-[#ccff00]" checked> Premier League</label>
-                        <label class="flex items-center gap-3 cursor-pointer"><input type="checkbox" class="accent-[#ccff00]" checked> Championship / L1 & L2</label>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="text-white text-xs font-bold mb-4 uppercase italic border-l-2 border-[#ccff00] pl-2">Non-League (Step 5-10)</p>
-                    <div class="space-y-3 text-sm text-gray-400 font-medium">
-                        <label class="flex items-center gap-3 cursor-pointer"><input type="checkbox" class="accent-[#ccff00]"> National League</label>
-                        <label class="flex items-center gap-3 cursor-pointer"><input type="checkbox" class="accent-[#ccff00]"> Regional Divisions</label>
-                        <label class="flex items-center gap-3 cursor-pointer"><input type="checkbox" class="accent-[#ccff00]"> Grassroots / Sunday League</label>
-                    </div>
-                </div>
-
-                <div class="pt-6 border-t border-gray-800">
-                    <p class="text-gray-500 text-[10px] font-bold uppercase mb-3">Region</p>
-                    <select class="w-full bg-gray-900 border border-gray-800 p-3 rounded text-xs text-gray-300">
-                        <option>All Regions</option>
-                        <option>Greater London</option>
-                        <option>North West (Manchester/Liverpool)</option>
-                        <option>Midlands (Birmingham)</option>
-                    </select>
-                </div>
-            </div>
-        </aside>
-
-        <main class="flex-1 p-8 lg:p-12 bg-[#080808]">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
-                <div>
-                    <h1 class="text-6xl font-black uppercase tracking-tighter leading-none mb-2">UK Feed<span class="accent-text">.</span></h1>
-                    <p class="text-gray-500 italic text-sm font-medium">Monitoring every tier of the English game.</p>
-                </div>
-                <div class="bg-gray-900 p-2 rounded-xl flex gap-2 border border-gray-800">
-                    <button class="px-4 py-2 bg-white text-black rounded-lg text-[10px] font-black uppercase tracking-widest">Active Trials</button>
-                    <button class="px-4 py-2 text-gray-500 text-[10px] font-black uppercase tracking-widest">Archive</button>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                
-                <div class="tier-card p-6 rounded-2xl flex flex-col justify-between group">
-                    <div>
-                        <div class="flex justify-between items-start mb-6">
-                            <span class="text-[9px] font-black bg-blue-700 px-2 py-1 rounded">EFL LEAGUE ONE</span>
-                            <span class="text-[10px] font-bold text-gray-600 uppercase italic">London</span>
-                        </div>
-                        <h3 class="text-2xl font-black uppercase italic mb-1 group-hover:accent-text transition">Charlton Athletic</h3>
-                        <p class="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-6 border-b border-gray-900 pb-2 italic">Academy Scholarship Intake</p>
-                        <div class="bg-black p-4 rounded-xl border border-gray-900 mb-6 space-y-2">
-                            <div class="flex justify-between text-xs"><span class="text-gray-500 italic">Fee:</span><span class="font-bold accent-text italic">FREE</span></div>
-                            <div class="flex justify-between text-xs"><span class="text-gray-500 italic">Age:</span><span class="font-bold text-white italic">U16 - U18</span></div>
-                        </div>
-                    </div>
-                    <button class="w-full py-4 bg-white text-black font-black uppercase text-[10px] rounded hover:accent-bg transition-all italic">Go to Application</button>
-                </div>
-
-                <div class="tier-card p-6 rounded-2xl flex flex-col justify-between group">
-                    <div>
-                        <div class="flex justify-between items-start mb-6">
-                            <span class="text-[9px] font-black bg-gray-800 px-2 py-1 rounded">NATIONAL LEAGUE</span>
-                            <span class="text-[10px] font-bold text-gray-600 uppercase italic">Manchester</span>
-                        </div>
-                        <h3 class="text-2xl font-black uppercase italic mb-1 group-hover:accent-text transition">Altrincham FC</h3>
-                        <p class="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-6 border-b border-gray-900 pb-2 italic">First Team Open Trial</p>
-                        <div class="bg-black p-4 rounded-xl border border-gray-900 mb-6 space-y-2">
-                            <div class="flex justify-between text-xs"><span class="text-gray-500 italic">Booking:</span><span class="font-bold text-white italic">£25.00</span></div>
-                            <div class="flex justify-between text-xs"><span class="text-gray-500 italic">Status:</span><span class="font-bold text-green-500 italic">OPEN</span></div>
-                        </div>
-                    </div>
-                    <button class="w-full py-4 border border-gray-800 text-white font-black uppercase text-[10px] rounded hover:bg-white hover:text-black transition-all italic">Secure Spot</button>
-                </div>
-
-            </div>
-        </main>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>المصدر / النادي</th>
+                    <th>الفئة</th>
+                    <th>الحالة</th>
+                    <th>الرابط</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <tr><td colspan="4">جاري تحميل أحدث التجارب...</td></tr>
+            </tbody>
+        </table>
     </div>
 
-    <footer class="p-10 border-t border-gray-900 bg-black text-center">
-        <p class="text-[9px] font-black text-gray-700 tracking-[0.4em] uppercase italic">TrialRadar UK | Official Registry of the English Pyramid</p>
-    </footer>
+    <script>
+        // الكود المسؤول عن جلب البيانات من ملف البوت
+        async function loadTrials() {
+            try {
+                // البوت بيحفظ البيانات في هذا الملف
+                const response = await fetch('trials_data.json');
+                const data = await response.json();
+                const tableBody = document.getElementById('tableBody');
+                
+                tableBody.innerHTML = ''; // مسح رسالة التحميل
 
+                data.forEach(item => {
+                    const row = `
+                        <tr>
+                            <td><b>${item.club}</b></td>
+                            <td>${item.category}</td>
+                            <td><span class="status-badge">${item.status}</span></td>
+                            <td><a href="${item.link}" target="_blank" class="apply-btn">فتح الرابط</a></td>
+                        </tr>
+                    `;
+                    tableBody.innerHTML += row;
+                });
+            } catch (error) {
+                console.error("Error loading JSON:", error);
+                document.getElementById('tableBody').innerHTML = '<tr><td colspan="4">لا توجد بيانات حالياً. شغل البوت وارفع الملف لـ GitHub.</td></tr>';
+            }
+        }
+
+        // تشغيل الوظيفة فور فتح الصفحة
+        window.onload = loadTrials;
+    </script>
 </body>
 </html>
