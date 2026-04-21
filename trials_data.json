@@ -1,0 +1,37 @@
+[
+    {
+        "club": "UK Football Trials",
+        "link": "https://www.ukfootballtrials.com/blog",
+        "category": "Verified Source",
+        "status": "Check Weekly",
+        "date_found": "2026-04-21"
+    },
+    {
+        "club": "The PFA Trials",
+        "link": "https://www.thepfa.com/players/trials",
+        "category": "Verified Source",
+        "status": "Check Weekly",
+        "date_found": "2026-04-21"
+    },
+    {
+        "club": "League Football Education",
+        "link": "https://www.lfe.org.uk/trials",
+        "category": "Verified Source",
+        "status": "Check Weekly",
+        "date_found": "2026-04-21"
+    },
+    {
+        "club": "Pitchero Trials",
+        "link": "https://www.pitchero.com/trials",
+        "category": "Verified Source",
+        "status": "Check Weekly",
+        "date_found": "2026-04-21"
+    },
+    {
+        "club": "Non-League Football",
+        "link": "https://www.nonleague-football.co.uk",
+        "category": "Verified Source",
+        "status": "Check Weekly",
+        "date_found": "2026-04-21"
+    }
+]
